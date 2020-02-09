@@ -1,14 +1,9 @@
 <% if @user.homes.count < 1 %>
-<h1>You don't have any homes set up yet. Let's create one now!</h1>
+  <h1>Add A New Home</h1>
+  <h2>You're on your way to having your first HomeBoard! Fill in the details for your house to get started.</h2>
   <%= render 'homes/form' %>
-<% else %>
-<h2>Here is your current list of homes:</h2>
-  <ul>
-    <% @user.homes.each do |f| %>
-      <li><%= f.id  %></li>
-      <li><%= f.home_id  %></li>
-      <li><%= f.name  %></li>
-      <li><%= f.zip_code  %></li>
-    <% end %>
-  </ul>
+  <% else %>
+  <h1>Add A New Home</h1>
+  <h2>Enjoying HomeBoard? Great! You can create as many HomeBoards as you need.</h2>
+  <%= render 'homes/form' %>
 <% end %>

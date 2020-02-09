@@ -1,8 +1,8 @@
 class UserHomesController < ApplicationController
   def show
-    @user = User.find(session[:user_id])
+    @user = User.find(params[:user_id])
     @home = Home.find(params[:id])
-    if !@home.user_ids.include?(current_user.id)
+    if session[:user_id] != @user.id || !@home.user_ids.include?(@user.id)
       redirect_to '/403'
     end
   end
@@ -10,6 +10,10 @@ class UserHomesController < ApplicationController
   def new
     @user = User.find(session[:user_id])
     @home = Home.new
+  end
+
+  def index
+    @user = User.find(session[:user_id])
   end
 
 end

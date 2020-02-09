@@ -1,0 +1,10 @@
+<h2>Here is your current list of homes:</h2>
+<ul>
+  <% @user.homes.each do |home| %>
+    <h1><%= link_to home.name, user_user_home_path(@user, home.id) %></h1>
+    <li>House ID: <%= home.id  %></li>
+    <li>Zip Code: <%= home.zip_code  %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Add Another Home", new_user_home_path %>
