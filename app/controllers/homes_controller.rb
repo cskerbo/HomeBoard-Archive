@@ -1,2 +1,28 @@
 class HomesController < ApplicationController
+  def new
+    @home = Home.new
+  end
+
+  def create
+    @user = User.find(session[:user_id])
+    @home = Home.create(home_params)
+    @home.user_ids = @user.id
+    @home.save
+    redirect_to user_user_home_path(current_user, @home)
+  end
+
+   def show
+      @user = User.find(session[:user_id])
+      @home = Home.find(params[:id])
+      if !@home.user_ids.include?(current_user.id)
+        redirect_to '/403'
+      end
+  end
+
+  private
+
+  def home_params
+    params.require(:home).permit(:name, :zip_code)
+  end
+
 end

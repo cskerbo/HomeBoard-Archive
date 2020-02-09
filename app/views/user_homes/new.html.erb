@@ -1,0 +1,14 @@
+<% if @user.homes.count < 1 %>
+<h1>You don't have any homes set up yet. Let's create one now!</h1>
+  <%= render 'homes/form' %>
+<% else %>
+<h2>Here is your current list of homes:</h2>
+  <ul>
+    <% @user.homes.each do |f| %>
+      <li><%= f.id  %></li>
+      <li><%= f.home_id  %></li>
+      <li><%= f.name  %></li>
+      <li><%= f.zip_code  %></li>
+    <% end %>
+  </ul>
+<% end %>
