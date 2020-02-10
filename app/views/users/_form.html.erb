@@ -4,6 +4,7 @@
     <div class="card card-block w-50 p-5 mx-auto">
       <form class="form-signin">
         <br><img class="mb-4 mx-auto my-auto" src="https://img.icons8.com/office/160/000000/home.png" alt="" width="72" height="72"><br>
+        <%= link_to "Log in with Google!", '/auth/google_oauth2' %>
         <h1 class="h3 mb-3 font-weight-normal text-center">Create a new account</h1>
         <%= f.label :username, class: "sr-only"%>
         <%= f.text_field :username, :required => true, class: "form-control mb-2", placeholder: "Username"%>
