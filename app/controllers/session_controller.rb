@@ -3,6 +3,7 @@ class SessionController < ApplicationController
 
   def new
     @user = User.new
+    render template: 'session/new'
   end
 
   def create
