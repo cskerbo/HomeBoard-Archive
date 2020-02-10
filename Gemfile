@@ -23,8 +23,13 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~>4.3.1'
 gem 'omniauth'
+# Use Devise for authentication
+gem 'devise'
+# Use Omniauth Google plugin
 gem 'omniauth-google-oauth2'
-gem 'dotenv-rails'
+# Use ActiveRecord Session
+gem 'activerecord-session_store'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -34,11 +39,14 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  # Use Dotenv for environment variables
+  gem 'dotenv-rails'
 end
 
 group :test do
