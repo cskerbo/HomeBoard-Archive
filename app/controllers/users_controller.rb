@@ -2,17 +2,16 @@ class UsersController < ApplicationController
   skip_before_action :verified_user, only: [:new, :create]
 
   def new
-
     @user = User.new
   end
 
   def create
-    if params[:user][:password] == params[:user][:password_confirmation]
-      @user = User.create(user_params)
-      session[:user_id] = @user.id
+    @user = User.create(user_params)
+    session[:user_id] = @user.id
+    if @user.valid?
       redirect_to new_user_user_home_path(@user)
     else
-      redirect_to new_user_path
+      render 'new'
     end
   end
 
