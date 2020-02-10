@@ -7,19 +7,20 @@ class SessionController < ApplicationController
   end
 
   def create
-    if @user = User.find_by(username: params[:username])
-      unless @user.authenticate(params[:password])
+    @user = User.find_by(username: params[:user][:username])
+    if @user.nil?
+      redirect_to new_session_path
+      flash[:username_error] = "Username does not exist"
+    else
+      if @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
         redirect_to user_user_homes_path(@user)
       else
+        redirect_to new_session_path
         flash[:password_error] = "Password is incorrect"
-        render 'new'
       end
-    else
-      redirect_to new_session_path
-      flash[:username_error] = "Username does not exist"
     end
-  end
+    end
 
 
   def destroy

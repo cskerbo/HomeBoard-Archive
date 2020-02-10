@@ -6,30 +6,23 @@
         <br><img class="mb-4 mx-auto my-auto" src="https://img.icons8.com/office/160/000000/home.png" alt="" width="72" height="72"><br>
         <h1 class="h3 mb-3 font-weight-normal text-center">Create a new account</h1>
         <%= f.label :username, class: "sr-only"%>
-        <%= f.text_field :username, :required => true, class: "form-control", placeholder: "Username"%>
+        <%= f.text_field :username, :required => true, class: "form-control mb-2", placeholder: "Username"%>
         <%= f.label :email, class: "sr-only"%>
-        <%= f.text_field :email, :required => true, class: "form-control", placeholder: "Email", type: "email"%>
+        <%= f.text_field :email, :required => true, class: "form-control mb-2", placeholder: "Email", type: "email"%>
         <%= f.label :password, class: "sr-only"%>
-        <%= f.text_field :password, :required => true, class: "form-control", placeholder: "Password", type: "password" %>
+        <%= f.text_field :password, :required => true, class: "form-control mb-2", placeholder: "Password", type: "password" %>
         <%= f.label :password_confirmation, class: "sr-only"%>
-        <%= f.text_field :password_confirmation, :required => true, class: "form-control", placeholder: "Confirm Password", type: "password" %>
+        <%= f.text_field :password_confirmation, :required => true, class: "form-control mb-2", placeholder: "Confirm Password", type: "password" %>
+        <% if @user.errors.any? %>
+          <% @user.errors.full_messages.each do |message| %>
+            <p class="text-center text-danger font-weight-bold"><%= message %></p>
+          <% end %>
+        <% end %>
         <div class="checkbox mb-3">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-          <% if @user.errors.any? %>
-            <div id="error_explanation">
-              <p>
-                <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
-              </p>
-              <ul>
-                <% @user.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
-          <% end %>
         <%= f.submit "Create Account", class: "btn btn-lg btn-primary btn-block" %>
         <p class="mt-3 mb-1  text-center">Already registered? <%= link_to "Log In", new_session_path %></p>
         <p class="mt-3 mb-1 text-muted text-center">&copy; 2020</p>

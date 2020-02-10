@@ -1,4 +1,4 @@
-<%= form_for @user, url: '/session', method: :post do |f| %>
+<%= form_for @user, url: '/session', method: :post, action: :create do |f| %>
   <div class="row h-100">
   <div class="col-sm-12 my-auto">
     <div class="card card-block w-50 p-5 mx-auto">
@@ -7,10 +7,10 @@
   <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
   <%= f.label :username, class: "sr-only"%>
   <%= f.text_field :username, :required => true, class: "form-control", placeholder: "Username"%>
-  <%= flash[:username_error] %>
+  <p class="text-center text-danger font-weight-bold"><%= flash[:username_error] %></p>
   <%= f.label :password, class: "sr-only"%>
   <%= f.text_field :password, :required => true, class: "form-control", placeholder: "Password", type: "password" %>
-  <%= flash[:password_error] %>
+  <p class="text-center text-danger font-weight-bold"><%= flash[:password_error] %></p>
   <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Remember me
