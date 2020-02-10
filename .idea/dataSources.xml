@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails HomeBoard: production" uuid="e7e34bf9-d270-4667-8f20-d5119ad89b95">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/HomeBoard_production</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails HomeBoard: test" uuid="837b1a2b-4256-4da2-b67d-e417b85587b2">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/HomeBoard_test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails HomeBoard: development" uuid="ad3951f8-3579-4e63-8c35-90727408fe9c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/HomeBoard_development</jdbc-url>
+    </data-source>
+  </component>
+</project>

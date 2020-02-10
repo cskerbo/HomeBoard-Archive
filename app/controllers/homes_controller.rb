@@ -4,7 +4,7 @@ class HomesController < ApplicationController
   end
 
   def create
-    @user = User.find(session[:user_id])
+    @user = current_user
     @home = Home.create(home_params)
     @home.user_ids = @user.id
     @home.save
@@ -12,7 +12,7 @@ class HomesController < ApplicationController
   end
 
    def show
-      @user = User.find(session[:user_id])
+      @user = current_user
       @home = Home.find(params[:id])
       if !@home.user_ids.include?(current_user.id)
         redirect_to '/403'

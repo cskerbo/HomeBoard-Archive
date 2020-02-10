@@ -1,19 +1,20 @@
 class UserHomesController < ApplicationController
+  before_action :authenticate_user!
   def show
-    @user = User.find(params[:user_id])
+    @user = current_user
     @home = Home.find(params[:id])
-    if session[:user_id] != @user.id || !@home.user_ids.include?(@user.id)
+    if !@home.user_ids.include?(@user.id)
       redirect_to '/403'
     end
   end
 
   def new
-    @user = User.find(session[:user_id])
+    @user = current_user
     @home = Home.new
   end
 
   def index
-    @user = User.find(session[:user_id])
+    @user = current_user
   end
 
 end

@@ -7,6 +7,7 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -34,6 +35,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href=<%= new_user_path %>><span class="glyphicon glyphicon-log-in"></span> Sign Up</a></li>
           <li><a href=<%= new_session_path %>><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, :method => :post %></li>
         </ul>
       </div>
     </nav>

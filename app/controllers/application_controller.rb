@@ -1,19 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :verified_user
-  helper_method :current_user
-
-  private
-
-  def verified_user
-    redirect_to '/' unless user_is_authenticated
+  # redirect to dashboard index after
+  # devise sign in
+  def after_sign_in_path_for(resource)
+    user_user_homes_path(resource)
   end
 
-  def user_is_authenticated
-    !!current_user
-  end
+  # redirect to session new after
+  # devise sign out
 
-  def current_user
-    User.find_by(id: session[:user_id])
-  end
 end

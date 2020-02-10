@@ -1,16 +1,14 @@
 class SessionController < ApplicationController
-  skip_before_action :verified_user, only: [:new, :create]
-
   def new
     @user = User.new
     render template: 'session/new'
   end
 
   def create
-    @user = User.find_by(username: params[:user][:username])
+    @user = User.find_by(email: params[:user][:email])
     if @user.nil?
       redirect_to new_session_path
-      flash[:username_error] = "Username does not exist"
+      flash[:email_error] = "User does not exist"
     else
       if @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
