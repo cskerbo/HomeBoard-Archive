@@ -25,25 +25,27 @@
 
   <header>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="border-radius: 0px;">
-      <img class="mb-4 mx-auto my-auto" src="https://img.icons8.com/office/80/000000/home.png" alt="" width="20" height="20">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="border-radius: 0px; margin-bottom: 0px;">
+      <img class="mb-4 d-none d-md-block mx-auto my-auto" src="https://img.icons8.com/office/80/000000/home.png" alt="" width="20" height="20">
       <a class="navbar-brand" href=<%=root_path %>>  HomeBoard</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href=<%= new_user_path %>><span class="glyphicon glyphicon-log-in"></span> Sign Up</a></li>
-          <li><a href=<%= new_session_path %>><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          <li><%= link_to "Sign Out", destroy_user_session_path, :method => :post %></li>
+        <ul class="nav navbar-nav navbar-right text-center">
+          <li><a href=<%= new_user_registration_path %>><span class="glyphicon glyphicon-log-in"></span> Sign Up</a></li>
+          <li><a href=<%= user_session_path %>><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href=<%= destroy_user_session_path %>><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
       </div>
     </nav>
   </header>
-  <main role="main" class="container">
+
+
+
+  <main role="main" class="container" style="padding-top: 40px;">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
     <%= yield %>
   </main>
   <footer class="footer">

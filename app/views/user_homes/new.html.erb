@@ -1,9 +1,10 @@
 <% if @user.homes.count < 1 %>
-  <h1>Add A New Home</h1>
-  <h2>You're on your way to having your first HomeBoard! Fill in the details for your house to get started.</h2>
+  <h1>Create a new home</h1>
+  <h2>Let's set up your HomeBoard!</h2>
+  <p> First, let's get some details about your house.</p>
   <%= render 'homes/form' %>
   <% else %>
-  <h1>Add A New Home</h1>
+  <h1>Create a new home</h1>
   <h2>Enjoying HomeBoard? Great! You can create as many HomeBoards as you need.</h2>
   <%= render 'homes/form' %>
 <% end %>

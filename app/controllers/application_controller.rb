@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     user_user_homes_path(resource)
   end
 
-  # redirect to session new after
+  # redirect to remove new after
   # devise sign out
 
 end

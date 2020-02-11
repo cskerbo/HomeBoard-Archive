@@ -7,8 +7,11 @@ class HomesController < ApplicationController
     @user = current_user
     @home = Home.create(home_params)
     @home.user_ids = @user.id
-    @home.save
-    redirect_to user_user_home_path(current_user, @home)
+    if @home.save
+      redirect_to user_user_home_path(current_user, @home)
+    else
+      render 'new'
+    end
   end
 
    def show
