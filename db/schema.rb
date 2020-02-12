@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_201919) do
     t.string "street"
     t.string "city"
     t.string "state"
+    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

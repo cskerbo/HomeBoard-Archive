@@ -1,4 +1,5 @@
 module HomesHelper
+  # creates list of states to select from during home creation process
   def state_list
     state_codes = []
     us = Carmen::Country.coded('US')
@@ -8,5 +9,13 @@ module HomesHelper
       state_codes << individual_code
     end
     return state_codes
+  end
+
+  # takes individual address fields and combines them into one address field in the home table
+  def address(home_id)
+    @home = Home.find(home_id)
+    full_address = "#{@home.street} " + "#{@home.city}, " + "#{@home.state} " + "#{@home.zip_code}"
+    @home.address = full_address
+    @home.save
   end
 end

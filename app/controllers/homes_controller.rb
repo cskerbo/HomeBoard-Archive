@@ -10,6 +10,7 @@ class HomesController < ApplicationController
     @home = Home.create(home_params)
     @home.user_ids = @user.id
     if @home.save
+      helpers.address(@home.id)
       redirect_to user_user_home_path(current_user, @home)
     else
       render 'new'
