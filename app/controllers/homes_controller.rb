@@ -1,10 +1,12 @@
 class HomesController < ApplicationController
   def new
     @home = Home.new
+    @states = helpers.state_list
   end
 
   def create
     @user = current_user
+    @states = helpers.state_list
     @home = Home.create(home_params)
     @home.user_ids = @user.id
     if @home.save
@@ -25,7 +27,7 @@ class HomesController < ApplicationController
   private
 
   def home_params
-    params.require(:home).permit(:name, :zip_code)
+    params.require(:home).permit(:name, :zip_code, :street, :city, :state)
   end
 
 end

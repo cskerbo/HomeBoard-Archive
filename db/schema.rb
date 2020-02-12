@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 2020_02_10_201919) do
   create_table "homes", force: :cascade do |t|
     t.string "name"
     t.integer "zip_code"
+    t.string "street"
+    t.string "city"
+    t.string "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

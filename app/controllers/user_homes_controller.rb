@@ -11,6 +11,7 @@ class UserHomesController < ApplicationController
   def new
     @user = current_user
     @home = Home.new
+    @states = helpers.state_list
   end
 
   def index
