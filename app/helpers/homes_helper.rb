@@ -14,8 +14,10 @@ module HomesHelper
   # takes individual address fields and combines them into one address field in the home table
   def address(home_id)
     @home = Home.find(home_id)
-    full_address = "#{@home.street} " + "#{@home.city}, " + "#{@home.state} " + "#{@home.zip_code}"
-    @home.address = full_address
+    location = [@home.street, @home.city, @home.state, @home.zip_code].compact.join(', ')
+    @home.address = location
     @home.save
+    return location
   end
+
 end

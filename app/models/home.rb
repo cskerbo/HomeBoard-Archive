@@ -8,4 +8,7 @@ class Home < ApplicationRecord
                       allow_blank: false
   validates_uniqueness_of :name
   validates_presence_of :name, :state, :street, :city
+  geocoded_by :address
+  after_validation :geocode
+
 end
