@@ -1,0 +1,6 @@
+<p><%= @home.weather_description.capitalize %></p>
+<p>Current Temperature: <%= @home.current_temp.round %>°</p>
+<p>Feels Like: <%= @home.feels_like.round %>°</p>
+<% Time.zone = 'Eastern Time (US & Canada)' %>
+<p>Sunrise: <%= DateTime.strptime("#{@home.sunrise}", '%s').in_time_zone %></p>
+<p>Sunset: <%= @home.sunset %></p>

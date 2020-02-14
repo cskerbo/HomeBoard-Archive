@@ -11,6 +11,7 @@ class HomesController < ApplicationController
     @home.user_ids = @user.id
     if @home.save
       helpers.address(@home.id)
+      helpers.weather(@home.id)
       redirect_to user_user_home_path(current_user, @home)
     else
       render 'new'

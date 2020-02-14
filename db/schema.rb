@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2020_02_10_201919) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.integer "weather_id"
+    t.string "weather_main"
+    t.string "weather_description"
+    t.string "weather_icon"
+    t.float "current_temp"
+    t.float "feels_like"
+    t.float "temp_min"
+    t.float "temp_max"
+    t.integer "sunrise"
+    t.integer "sunset"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
