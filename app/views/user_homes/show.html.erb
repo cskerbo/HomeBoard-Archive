@@ -4,9 +4,8 @@
   .row.content {height: 550px}
 
   /* Set gray background color and 100% height */
-  .sidenav {
-    background-color: #f1f1f1;
-    height: 100%;
+  .well {
+    background-color: #999999;
   }
 
   /* On small screens, set height to 'auto' for the grid */
@@ -16,7 +15,6 @@
 
   .map-container{
     overflow:hidden;
-
     position:relative;
     height:300px;
     width: 100%;
@@ -30,11 +28,11 @@
   }
 </style>
 
-<div class="container-fluid">
-  <div class="row content">
+
+<div class="row content">
     <div class="col-sm-12">
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-6">
       <div class="well">
         <h4>Travel Checker</h4>
         <div id="map-container" class="map-container">
@@ -45,7 +43,7 @@
         </div>
       </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-2">
           <div class="well">
             <h4>Weather</h4>
             <%= render 'homes/weather_data'%>
@@ -114,5 +112,4 @@
         </div>
       </div>
     </div>
-  </div>
 </div>
