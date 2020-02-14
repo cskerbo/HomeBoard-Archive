@@ -39,4 +39,11 @@ module HomesHelper
     @home.save
   end
 
+  def timezone(home_id)
+    @home = Home.find(home_id)
+    zone = Timezone.lookup(@home.latitude, @home.longitude)
+    @home.timezone = zone
+    @home.save
+  end
+
 end

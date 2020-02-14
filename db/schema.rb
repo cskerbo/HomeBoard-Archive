@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_201919) do
     t.float "temp_max"
     t.integer "sunrise"
     t.integer "sunset"
+    t.string "timezone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -12,6 +12,7 @@ class HomesController < ApplicationController
     if @home.save
       helpers.address(@home.id)
       helpers.weather(@home.id)
+      helpers.timezone(@home.id)
       redirect_to user_user_home_path(current_user, @home)
     else
       render 'new'

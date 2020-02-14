@@ -19,6 +19,7 @@ class CreateHomes < ActiveRecord::Migration[6.0]
       t.float :temp_max
       t.integer :sunrise
       t.integer :sunset
+      t.string :timezone
 
       t.timestamps
     end

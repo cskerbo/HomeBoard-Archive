@@ -5,6 +5,8 @@ ruby '2.6.5'
 
 # List of US states for User address and location services
 gem 'carmen'
+# Set time zone for users
+gem 'timezone'
 # geocoding services
 gem 'geocoder'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
